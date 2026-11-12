@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Агентство праздников</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; margin: 0; padding: 25px; color: #212529; }
+        .container { display: flex; max-width: 1300px; margin: 0 auto; gap: 25px; }
+        .form-panel, .archive-panel { background: white; border: 1px solid #dee2e6; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
+        .form-panel { flex: 1; }
+        .archive-panel { flex: 1.8; }
+        h2 { margin-top: 0; font-size: 22px; color: #495057; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        h2.gray { color: #6c757d; }
+        label { display: block; margin: 12px 0 4px; font-size: 14px; font-weight: 600; }
+        input, select { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px; }
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 25px; }
+        button:hover { background-color: #0069d9; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; font-size: 13px; }
+        th { background-color: #f1f3f5; font-weight: 600; }
+        .status-badge { background-color: #28a745; color: white; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Левая колонка: Форма оформления -->
+    <div class="form-panel">
+        <h2>Оформление мероприятия</h2>
+        <form onsubmit="return false;">
+            <label>ФИО:</label>
+            <input type="text" placeholder="Иванов Иван Иванович">
+            
+            <label>Тип мероприятия:</label>
+            <select>
+                <option value="Свадьба" selected>Свадьба</option>
+                <option value="Корпоратив">Корпоратив</option>
+                <option value="День рождения">День рождения</option>
+                <option value="Выпускной">Выпускной</option>
+            </select>
+            
+            <label>Количество гостей:</label>
+            <input type="number" min="1" value="20">
+            
+            <label>Пакет услуг агентства:</label>
+            <select>
+                <option value="Бюджетный">Бюджетный (Только аренда)</option>
+                <option value="Стандарт" selected>Стандарт (Зал + Декор)</option>
+                <option value="Premium">Premium (Все включено)</option>
+            </select>
+            
+            <label>Назначить ответственного ведущего:</label>
+            <select>
+                <option selected>Александр Рева (Ведущий VIP)</option>
+                <option>Елена Блиновская (Координатор)</option>
+                <option>Шоу-балет 'Кристалл' (Анимация)</option>
+            </select>
+            
+            <button type="submit">Рассчитать смету и сохранить</button>
+        </form>
+    </div>
+
+    <!-- Правая колонка: Архив мероприятий -->
+    <div class="archive-panel">
+        <h2 class="gray">АРХИВ ОФОРМЛЕННЫХ МЕРОПРИЯТИЙ</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Заказчик</th>
+                    <th>Тип события</th>
+                    <th>Гости</th>
+                    <th>Организатор</th>
+                    <th>Итоговая смета</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5</td>
+                    <td><b>воларполырволр</b></td>
+                    <td>Корпоратив</td>
+                    <td>5 чел.</td>
+                    <td>Шоу-балет 'Кристалл' (Анимация)</td>
+                    <td style="color: #28a745; font-weight: bold;">165,000.00 ₽</td>
+                    <td><span class="status-badge">ПОДТВЕРЖДЕНО</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><b>Иванов И.И.</b></td>
+                    <td>Корпоратив</td>
+                    <td>5 чел.</td>
+                    <td>Шоу-балет 'Кристалл' (Анимация)</td>
+                    <td style="color: #28a745; font-weight: bold;">165,000.00 ₽</td>
+                    <td><span class="status-badge">ПОДТВЕРЖДЕНО</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><b>Халтурина К.С.</b></td>
+                    <td>Корпоратив</td>
+                    <td>100 чел.</td>
+                    <td>Шоу-балет 'Кристалл' (Анимация)</td>
+                    <td style="color: #28a745; font-weight: bold;">450,000.00 ₽</td>
+                    <td><span class="status-badge">ПОДТВЕРЖДЕНО</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><b>Васильева О.Н.</b></td>
+                    <td>День рождения</td>
+                    <td>15 чел.</td>
+                    <td>Елена Блиновская (Координатор)</td>
+                    <td style="color: #28a745; font-weight: bold;">105,000.00 ₽</td>
+                    <td><span class="status-badge">ПОДТВЕРЖДЕНО</span></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><b>Смирнов А.П.</b></td>
+                    <td>Свадьба</td>
+                    <td>50 чел.</td>
+                    <td>Александр Рева (Ведущий VIP)</td>
+                    <td style="color: #28a745; font-weight: bold;">300,000.00 ₽</td>
+                    <td><span class="status-badge">ПОДТВЕРЖДЕНО</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
